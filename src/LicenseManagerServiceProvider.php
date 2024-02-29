@@ -13,12 +13,9 @@
 
     class LicenseManagerServiceProvider extends ServiceProvider
     {
-        protected $namespace = '\Rasa\LicenseManager\Http\Controllers';
+        protected $namespace = '\Rasaco\LicenseManager\Http\Controllers';
 
-        /**
-         * If your plugin will provide any services, you can register them here.
-         * See: https://laravel.com/docs/5.6/providers#the-register-method
-         */
+        
         public function register()
         {
             // Nothing is registered at this time
@@ -26,6 +23,13 @@
 
         public function boot()
         {
+
+            //Route::pushMiddlewareToGroup('web', AddToMenus::class);
+
+            $this->publishes([
+                __DIR__.'/config/license-manager.php' => config_path('license-manager.php'),
+            ],'license-config');
+            
 
             Route::middleware('web')
                 ->namespace($this->namespace)
