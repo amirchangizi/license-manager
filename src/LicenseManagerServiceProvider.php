@@ -6,7 +6,7 @@
     | TIME   : 12:25 PM
     */
 
-    namespace Rasa\LicenseManager;
+    namespace Rasaco\LicenseManager;
 
     use Illuminate\Support\ServiceProvider;
     use Illuminate\Support\Facades\Route;

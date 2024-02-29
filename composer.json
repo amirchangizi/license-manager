@@ -1,8 +1,8 @@
 {
-    "name": "rasa/license-manager",
+    "name": "rasaco/license-manager",
     "autoload": {
         "psr-4": {
-            "Rasa\\LicenseManager\\": "src/"
+            "Rasaco\\LicenseManager\\": "src/"
         }
     },
     "authors": [
@@ -14,14 +14,14 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rasa\\LicenseManager\\LicenseManagerServiceProvider"
+                "Rasaco\\LicenseManager\\LicenseManagerServiceProvider"
             ]
         }
     },
     "repositories": [
         {
             "type": "path",
-            "url": "rasa/license-manager/config",
+            "url": "rasaco/license-manager/config",
             "options": {
                 "symlink": true
             }
