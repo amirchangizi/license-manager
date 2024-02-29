@@ -1,0 +1,31 @@
+{
+    "name": "rasa/license-manager",
+    "autoload": {
+        "psr-4": {
+            "Rasa\\LicenseManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "amir",
+            "email": "amir.changizi.5@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rasa\\LicenseManager\\LicenseManagerServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "rasa/license-manager/config",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {}
+}
