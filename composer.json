@@ -1,5 +1,7 @@
 {
     "name": "rasaco/license-manager",
+    "version": "0.0.2",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "Rasaco\\LicenseManager\\": "src/"
@@ -18,14 +20,5 @@
             ]
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "rasaco/license-manager/config",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
     "require": {}
 }
