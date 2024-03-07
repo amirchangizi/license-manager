@@ -7,5 +7,7 @@
     */
 
     return [
+        'users' => [],
+        'web-site' => 'https://test.com',
 
     ];

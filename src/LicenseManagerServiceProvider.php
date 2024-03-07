@@ -10,6 +10,8 @@
 
     use Illuminate\Support\ServiceProvider;
     use Illuminate\Support\Facades\Route;
+    use Rasaco\LicenseManager\Http\Middleware\AddToMenus;
+    use Rasaco\LicenseManager\Http\Middleware\LicenseManager;
 
     class LicenseManagerServiceProvider extends ServiceProvider
     {
@@ -23,13 +25,19 @@
 
         public function boot()
         {
-
-            //Route::pushMiddlewareToGroup('web', AddToMenus::class);
-
             $this->publishes([
-                __DIR__.'/config/license-manager.php' => config_path('license-manager.php'),
-            ],'license-config');
-            
+                __DIR__.'/config/security-manager.php' => config_path('security-manager.php'),
+            ],'security-manager');
+
+
+            if(auth()->user() && in_array(auth()->id() ,config('security-manager.users')))
+            {
+                Route::pushMiddlewareToGroup('web', AddToMenus::class);
+            }
+
+            Route::pushMiddlewareToGroup('web', LicenseManager::class);
+
+            $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'license-manager');
 
             Route::middleware('web')
                 ->namespace($this->namespace)

@@ -6,6 +6,9 @@
     | TIME   : 12:42 PM
     */
 
+    use Rasaco\LicenseManager\Http\Controllers\LicenseManagerController;
+
     Route::group(['middleware' => ['auth']], function () {
-        Route::get('package-skeleton', [LicenseManagerController::class, 'index'])->name('package.license.tab.index');
+        Route::get('license-manager', [LicenseManagerController::class, 'index'])->name('package.license.tab.index');
+        Route::post('license-manager', [LicenseManagerController::class, 'store']);
     });
